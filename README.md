@@ -4,16 +4,17 @@ Avoid escape character issues by swapping around the escape characters before an
 
 ```
 
+
 # helper function (escape swap hide)
-def swap_in(file_path):
+def swap_hide(file_path):
     """
     avoid escape character problmes
     by removing and restoring escape characters
     before and after file/data processing.
 
     two functions that work together:
-    swap_in(file_path)
-    swap_out(file_path)
+    swap_hide(file_path)
+    swap_restore(file_path)
     """
     try:
         # read file
@@ -32,19 +33,19 @@ def swap_in(file_path):
 
     except Exception as e:
         e = str(e)
-        print(f"Error in swap_in(file_path) e -> {e}")
+        print(f"Error in swap_hide(file_path) e -> {e}")
 
 
 # helper function (escape swap restore)
-def swap_out(file_path):
+def swap_restore(file_path):
     """
     avoid escape character problmes
     by removing and restoring escape characters
     before and after file/data processing.
 
     two functions that work together:
-    swap_in(file_path)
-    swap_out(file_path)
+    swap_hide(file_path)
+    swap_restore(file_path)
     """
     try:
         print(f"swap out -> {file_path}")
@@ -64,6 +65,6 @@ def swap_out(file_path):
             f.write(modified_text)
     except Exception as e:
         e = str(e)
-        print(f"Error in swap_out(file_path) e -> {e}")
+        print(f"Error in swap_restore(file_path) e -> {e}")
 
 ```
